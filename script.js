@@ -75,9 +75,9 @@ function placeMarker(id) {
     if (gameBoard[id].open) {
         let element = document.getElementById(id)
         if (xMarker) {
-            element.innerHTML = "&#10060"//"&#215"
+            element.innerHTML = "&#9924"//"&#215"
         } else {
-            element.innerHTML = "&#11093;"
+            element.innerHTML = "&#9749;"
         }
         recordMarker(id, xMarker)
         checkForWin()
