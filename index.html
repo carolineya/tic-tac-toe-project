@@ -1,7 +1,72 @@
 <!DOCTYPE html>
-<head>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
 
-</head>
-<body>
-    <h1>Hello</h1>
-</body>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1>TIC TAC TOE</h1>
+
+        <dialog id="start-game-dialog">
+            <p>Welcome to Tic Tac Toe!</p>
+            <form method="dialog">
+              <button class="new-game-btn" id="start-new-game-btn">START A NEW GAME</button>
+            </form>
+        </dialog>
+
+        <dialog id="player-info-dialog">
+            <h2>Please enter player information:</h2>
+            <form id="player-form" method="dialog">
+                <p>
+                    <label>
+                        Player 1 name:
+                        <input type="text" id="player1-name"/>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Player 2 name:
+                        <input type="text" id="player2-name"/>
+                    </label>
+                </p>
+                <input type="submit" id="submit" value="LET'S PLAY!" /> 
+            </form>
+        </dialog>
+
+        <dialog id="winner-dialog">
+            <p id="winner-result"></p>
+            <form method="dialog">
+              <button class="new-game-btn" id="winner-new-game-btn">START A NEW GAME</button>
+            </form>
+        </dialog>
+
+        <dialog id="draw-dialog">
+            <p id="draw-result"></p>
+            <form method="dialog">
+              <button class="new-game-btn" id="draw-new-game-btn">START A NEW GAME</button>
+            </form>
+        </dialog>
+
+        <table class="center border-none">
+            <tr>
+              <td><button class="square-btn" id="topLeft" onclick="placeMarker(this.id)"></button></td>
+              <td><button class="square-btn" id="topMid" onclick="placeMarker(this.id)"></button></td>
+              <td><button class="square-btn" id="topRight" onclick="placeMarker(this.id)"></button></td>
+            </tr>
+            <tr>
+              <td><button class="square-btn" id="midLeft" onclick="placeMarker(this.id)"></button></td>
+              <td><button class="square-btn" id="midMid" onclick="placeMarker(this.id)"></button></td>
+              <td><button class="square-btn" id="midRight" onclick="placeMarker(this.id)"></button></td>
+            </tr>
+            <tr>
+              <td><button class="square-btn" id="bottomLeft" onclick="placeMarker(this.id)"></button></td>
+              <td><button class="square-btn" id="bottomMid" onclick="placeMarker(this.id)"></button></td>
+              <td><button class="square-btn" id="bottomRight" onclick="placeMarker(this.id)"></button></td>
+            </tr>
+          </table>
+          <script src="script.js"></script>
+    </body>
+</html>

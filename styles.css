@@ -1,0 +1,136 @@
+body {
+    text-align: center;
+    background-color: #b9e1ff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 80px;
+    color: white;
+    margin: 30px;
+    text-shadow: 0px 0px 6px black;
+}
+
+dialog {
+    background-color: #dbeaf3;
+    border-radius: 10px;
+    height: 200px;
+    width: 400px;
+    margin-top: 200px;
+    box-shadow: 0px 0px 2px black;
+}
+
+#start-game-dialog, #draw-dialog {
+    font-size: 28px;
+    font-weight: bold;
+    padding: 0;
+}
+
+#winner-dialog {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.new-game-btn, #submit {
+    font-size: 22px;
+    color: white;
+    background-color: #6395b8;
+    border: 2px solid #304251;
+    outline: none;
+    border-radius: 5px;
+}
+
+.new-game-btn {
+    margin: 0;
+    height: 40px;
+    width: 250px;
+}
+
+#submit {
+    margin: 0;
+    height: 40px;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.new-game-btn:hover, #submit:hover {
+    background-color: #304251;
+}
+
+#player-info-dialog {
+    font-size: 20px;
+}
+
+input {
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+dialog::backdrop {
+    background-color: black;
+    opacity: 75%;
+}
+
+#winner-dialog::backdrop {
+    background-image: url("fireworks.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 100%;
+}
+
+td {
+    width: 200px;
+    height: 200px;
+    padding: 0;
+    background-color: #b9e1ff;
+}
+
+.border-none {
+  border-collapse: collapse;
+  border: none;
+}
+
+.border-none td {
+  border: 4px solid black;
+}
+
+.border-none tr:first-child td {
+  border-top: none;
+}
+
+.border-none tr:last-child td {
+  border-bottom: none;
+}
+
+.border-none tr td:first-child {
+  border-left: none;
+}
+
+.border-none tr td:last-child {
+  border-right: none;
+}
+
+.square-btn {
+    width: 200px;
+    height: 200px;
+    font-family: 'Arial', sans-serif;
+    font-size: 100px;
+    background-color: #b9e1ff;
+    border: none;
+    margin: 0;
+}
+
+button:hover {
+    background-color: white;
+}
+  
+.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
