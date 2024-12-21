@@ -15,6 +15,24 @@ const gameBoard = {
     bottomRight: {marker: "", open: true, position: [2, 2]},
 }
 
+const allMarkers = [
+    ["&#9924", "&#9749"], //snowman, hot drink
+    ["&#127958", "&#127956"], //beach, mountain
+    ["&#128640", "&#128642"], //rocket, train
+    ["&#129412", "&#128009"], //unicorn, dragon
+    ["&#128030", "&#129419"], //ladybug, butterfly
+    ["&#127836", "&#127828"], //noodles, burger
+    ["&#127809", "&#127808"], //maple leaf, clover
+    ["&#127820", "&#127827"], //banana, strawberry
+    ["&#127752", "&#127780"], //rainbow, sunshine
+    ["&#127874", "&#127873"], //cake, present
+    ["&#128274", "&#128273"], //lock, key
+    ["&#10060", "&#11093"] // x, o
+]
+
+let xImage = ""
+let oImage = ""
+
 const startGameDialog = document.getElementById("start-game-dialog")
 const newGameBtn = document.getElementById("start-new-game-btn")
 const playerDialog = document.getElementById("player-info-dialog")
@@ -25,6 +43,8 @@ const drawNewGameBtn = document.getElementById("draw-new-game-btn")
 const playerOneInput = document.getElementById("player1-name")
 const playerTwoInput = document.getElementById("player2-name")
 
+const delayInMs = 400
+
 let playerOne = createUser("Player 1")
 let playerTwo = createUser("Player 2")
 
@@ -34,6 +54,7 @@ window.onload = function () {
 
 newGameBtn.addEventListener("click", () => {
     playerDialog.showModal();
+    pickMarker()
   });
 
 winnerNewGameBtn.addEventListener("click", () => {
@@ -62,6 +83,13 @@ function createUser (name) {
     return { name, winStatement };
   }
 
+function pickMarker() {
+    randIndex = Math.floor( Math.random() * allMarkers.length )
+    console.log(randIndex)
+    xImage = allMarkers[randIndex][0]
+    oImage = allMarkers[randIndex][1]
+}
+
 function recordMarker(id, xMarker) {
     if (xMarker) {
         gameBoard[id].marker = "x"
@@ -75,9 +103,9 @@ function placeMarker(id) {
     if (gameBoard[id].open) {
         let element = document.getElementById(id)
         if (xMarker) {
-            element.innerHTML = "&#9924"//"&#215"
+            element.innerHTML = xImage//"&#215"
         } else {
-            element.innerHTML = "&#9749;"
+            element.innerHTML = oImage
         }
         recordMarker(id, xMarker)
         checkForWin()
@@ -106,7 +134,9 @@ function checkForWin() {
         findColumn(searchForThree("o"), playerTwo)
     }
     if (xCount + oCount === 9 & win === false) {
-        endGameMessage(null, win)
+        setTimeout(function() {
+            endGameMessage(null, win)
+        }, delayInMs)
     }
 }
 
@@ -129,7 +159,9 @@ function findDiagonal(searchResults, player) {
     })
     if (diagonalFalling.length === 3 | diagonalRising.length === 3) {
         win = true
-        endGameMessage(player, win)
+        setTimeout(function() {
+            endGameMessage(player, win)
+        }, delayInMs)
     }
 }
 
@@ -139,7 +171,9 @@ function findRow(searchResults, player) {
             return obj.position[0] === i})
         if (rowMarkers.length === 3) {
             win = true
-            endGameMessage(player, win)
+            setTimeout(function() {
+                endGameMessage(player, win)
+            }, delayInMs)
         }     
     }
 }
@@ -150,7 +184,9 @@ function findColumn(searchResults, player) {
             return obj.position[1] === i})
         if (columnMarkers.length === 3) {
             win = true
-            endGameMessage(player, win)
+            setTimeout(function() {
+                endGameMessage(player, win)
+            }, delayInMs)
         }     
     }
 }
@@ -178,6 +214,7 @@ function clearBoardPlayers() {
     playerOneInput.value = ""
     playerTwoInput.value = ""
     xMarker = true
+    pickMarker()
 }
 
 
