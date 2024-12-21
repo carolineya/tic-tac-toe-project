@@ -72,9 +72,13 @@ playerDialog.addEventListener("submit", function() {
     let playerTwoName = playerTwoInput.value
     if (playerOneName) {
         playerOne = createUser(playerOneName)
-    } 
+    } else {
+        playerOne = createUser("Player 1")
+    }
     if (playerTwoName) {
         playerTwo = createUser(playerTwoName)
+    } else {
+        playerTwo = createUser("Player 2")
     }
 })
 
