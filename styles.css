@@ -92,7 +92,7 @@ dialog::backdrop {
 #winner-dialog::backdrop {
     background-image: url("fireworks.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     opacity: 100%;
 }
 
