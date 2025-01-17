@@ -24,7 +24,7 @@ dialog {
 @media screen and (max-width: 800px) {
     dialog {
       width: 80%; /* The width is 100%, when the viewport is 800px or smaller */
-      height: 25%;
+      height: 35%;
     }
   }
 
