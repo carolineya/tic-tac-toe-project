@@ -84,10 +84,11 @@ dialog::backdrop {
 }
 
 td {
-    width: 200px;
+    width: 200px; 
     height: 200px;
     padding: 0;
     background-color: #b9e1ff;
+    /* change width and height to percentages; use flexbox or box-sizing */
 }
 
 .border-none {
