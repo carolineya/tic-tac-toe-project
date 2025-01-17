@@ -18,9 +18,8 @@ h1 {
       height: 35%;
     }
 
-    .new-game-btn {
-        width: 75%;
-        height: 30%;
+    #start-game-dialog, #draw-dialog {
+        font-size: 36px;
     }
   }
 
