@@ -11,6 +11,19 @@ h1 {
     text-shadow: 0px 0px 6px black;
 }
 
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 800px) {
+    dialog {
+      width: 80%; /* The width is 100%, when the viewport is 800px or smaller */
+      height: 35%;
+    }
+
+    .new-game-btn {
+        width: 60%;
+        height: 15%;
+    }
+  }
+
 dialog {
     background-color: #dbeaf3;
     border-radius: 10px;
@@ -19,14 +32,6 @@ dialog {
     margin-top: 200px;
     box-shadow: 0px 0px 2px black;
 }
-
-/* Use a media query to add a breakpoint at 800px: */
-@media screen and (max-width: 800px) {
-    dialog {
-      width: 80%; /* The width is 100%, when the viewport is 800px or smaller */
-      height: 35%;
-    }
-  }
 
 #start-game-dialog, #draw-dialog {
     font-size: 28px;
